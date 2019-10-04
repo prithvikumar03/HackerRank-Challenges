@@ -1,3 +1,5 @@
+package hackerrank;
+
 import javax.print.DocFlavor;
 import java.io.*;
 import java.math.*;

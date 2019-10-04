@@ -1,4 +1,4 @@
-package hr;
+package hackerrank;
 
 import java.io.*;
 import java.math.*;

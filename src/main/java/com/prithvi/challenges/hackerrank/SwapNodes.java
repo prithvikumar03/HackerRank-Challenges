@@ -1,9 +1,9 @@
-package hr;
+package hackerrank;
 
 import java.io.*;
 import java.util.*;
 
-import hr.LCA.*;
+//import hr.LCA.*;
 
 /*class hr.Node{
     Integer i=-1;
