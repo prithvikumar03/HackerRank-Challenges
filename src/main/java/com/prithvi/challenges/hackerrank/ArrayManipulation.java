@@ -7,6 +7,7 @@ import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
+import java.util.stream.Collectors;
 
 public class ArrayManipulation {
 
@@ -19,6 +20,9 @@ public class ArrayManipulation {
             //retList.add(0l);
             System.out.println(sumArray[i]);
         }*/
+
+
+
 
 
         long[] sumArray=new long[n];
