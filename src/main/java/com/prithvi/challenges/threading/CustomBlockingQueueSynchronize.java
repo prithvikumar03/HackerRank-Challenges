@@ -24,7 +24,6 @@ public class CustomBlockingQueueSynchronize<E> {
     }
 
     public synchronized void putIntoQueue(E element){
-
             //lock.lock();
             try{
                 if(this.queue.size() == queueLength){
@@ -40,8 +39,6 @@ public class CustomBlockingQueueSynchronize<E> {
                 notify();
                 //lock.unlock();
             }
-
-
     }
 
     public synchronized E removeFromQueue(){

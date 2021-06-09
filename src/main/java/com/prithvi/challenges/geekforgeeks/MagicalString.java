@@ -1,17 +1,28 @@
 package geekforgeeks;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.stream.Collectors;
 
 public class MagicalString {
-    static String magicalString(String S){
+    static String magicalString(String S) {
         // code here
-        StringBuilder builder = new StringBuilder();
-        S.chars().map(x -> (char) (121 - x + 1)).forEach(builder::append);
-        System.out.println(builder.toString());
-        return builder.toString();
+        //System.out.println(s);
+        return S.chars().map(x -> {
+                    if (x < 95)
+                        return (char) ('A' + ('Z' - x));
+                    else
+                        return (char) ('a' + ('z' - x));
+
+                }
+        )
+        .collect(StringBuilder::new,
+                StringBuilder::appendCodePoint, StringBuilder::append)
+        .toString();
     }
 
     public static void main(String[] args) {
-        magicalString("varun");
+        String magicalString = magicalString("Hello");
+        System.out.println(magicalString);
     }
 }

@@ -8,8 +8,8 @@ public class InsertLinkedList {
         //No elements are present
         if(headNode == null){
             Node node = new Node();
-            node.i = element;
-            node.nextNode = null;
+            node.data = element;
+            node.next = null;
             headNode = node;
         }
         //Only head node is present
@@ -19,37 +19,37 @@ public class InsertLinkedList {
             Node nextNode;
             Node currentNode = headNode;
             while(currentNode != null){
-                nextNode = currentNode.nextNode;
+                nextNode = currentNode.next;
                 if((currentNode==headNode && nextNode == null)){
                     Node node = new Node();
-                    node.i = element;
-                    if(currentNode.i > element){
-                        node.nextNode = currentNode;
+                    node.data = element;
+                    if(currentNode.data > element){
+                        node.next = currentNode;
                         headNode = node;
                     }
                     else{
-                        currentNode.nextNode = node;
+                        currentNode.next = node;
                     }
                     break;
                 }
-                else if((currentNode==headNode && element < currentNode.i)){
+                else if((currentNode==headNode && element < currentNode.data)){
                     Node node = new Node();
-                    node.i = element;
-                    node.nextNode = currentNode;
+                    node.data = element;
+                    node.next = currentNode;
                     headNode = node;
                     break;
                 }
                 else if(nextNode == null){
                     Node node = new Node();
-                    node.i = element;
-                    currentNode.nextNode = node;
+                    node.data = element;
+                    currentNode.next = node;
                     break;
                 }
-                else if(element>=currentNode.i && element<=nextNode.i){
+                else if(element>=currentNode.data && element<=nextNode.data){
                     Node node = new Node();
-                    node.i = element;
-                    node.nextNode = nextNode;
-                    currentNode.nextNode = node;
+                    node.data = element;
+                    node.next = nextNode;
+                    currentNode.next = node;
                     break;
                 }
                 //Have to check in advance as the element insertion has to happen before traversing to
@@ -77,7 +77,7 @@ public class InsertLinkedList {
                         node.nextNode = null;
                     }
                 }*/
-                currentNode = currentNode.nextNode;
+                currentNode = currentNode.next;
             }
         }
         return headNode;

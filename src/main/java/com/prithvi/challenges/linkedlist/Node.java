@@ -2,6 +2,13 @@ package linkedlist;
 
 public class Node {
 
-        int i;
-        Node nextNode;
+        int data;
+        Node next;
+
+        public Node(int data) {
+                this.data = data;
+        }
+
+        public Node() {
+        }
 }

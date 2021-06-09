@@ -5,15 +5,15 @@ import static tree.BstTraversal.printLevelOrder;
 
 public class ConstructBST {
 
-    private static BstNode addNodeToTree(BstNode root, BstNode newNode){
+    private static Node addNodeToTree(Node root, Node newNode){
         if(root == null){
             return newNode;
         }
 
-        if(newNode.i < root.i)
-            root.leftNode = addNodeToTree(root.leftNode, newNode);
+        if(newNode.data < root.data)
+            root.left = addNodeToTree(root.left, newNode);
         else
-            root.rightNode = addNodeToTree(root.rightNode, newNode);
+            root.right = addNodeToTree(root.right, newNode);
 
         return root;
     }
@@ -21,10 +21,10 @@ public class ConstructBST {
     public static void main(String[] args) {
         int[] nums = {10, 5, 1, 7, 40, 50};
 
-        BstNode rootNode = null;
+        Node rootNode = null;
         for (int n: nums
              ) {
-            rootNode = addNodeToTree(rootNode, new BstNode(n));
+            rootNode = addNodeToTree(rootNode, new Node(n));
         }
         //BstTraversal.printInOrder(rootNode);
         System.out.println("Height of Bst is:::" + heightOfBst(rootNode, 1));

@@ -3,16 +3,16 @@ package linkedlist;
 public class ReverseLinkList {
 
     public Node reverseLinkList(Node head){
-        if(head==null || head.nextNode==null){
+        if(head==null || head.next ==null){
             return head;
         }
         else{
             Node currentNode = head;
-            Node nextNode = head.nextNode;
-            currentNode.nextNode = null;
+            Node nextNode = head.next;
+            currentNode.next = null;
             while(nextNode!=null){
-                Node temp = nextNode.nextNode;
-                nextNode.nextNode = currentNode;
+                Node temp = nextNode.next;
+                nextNode.next = currentNode;
                 currentNode = nextNode;
                 nextNode = temp;
             }

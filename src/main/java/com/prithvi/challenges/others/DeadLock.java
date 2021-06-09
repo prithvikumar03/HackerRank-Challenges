@@ -1,10 +1,12 @@
 package others;
 
 public class DeadLock{
+    final static String string1 = "Hello";
+    final static String string2 = "World";
+
     public static void main(String[] args){
 
-        final String string1 = "Hello";
-        final String string2 = "World";
+
 
         Thread t1 = new Thread( () -> {
             synchronized(string1){

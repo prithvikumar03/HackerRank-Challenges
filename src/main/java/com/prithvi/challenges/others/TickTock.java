@@ -1,6 +1,7 @@
 package others;
 
 public class TickTock implements Runnable{
+    private final Object obj1 = this;
     /**
      * When an object implementing interface <code>Runnable</code> is used
      * to create a thread, starting the thread causes the object's
@@ -14,21 +15,21 @@ public class TickTock implements Runnable{
      */
     @Override
     public void run() {
-
-        synchronized (this){
+        synchronized (obj1){
             while(true){
                 String name = Thread.currentThread().getName();
+                //System.out.println(name);
                 try {
                     if (name.equals("tick")) {
                         System.out.println("tick");
                         Thread.sleep(1000);
-                        notify();
-                        wait();
+                        obj1.notify();
+                        obj1.wait();
                     } else {
-                        wait();
+                        obj1.wait();
                         System.out.println("tock");
                         Thread.sleep(1000);
-                        notify();
+                        obj1.notify();
                     }
                 }
                 catch(Exception e){

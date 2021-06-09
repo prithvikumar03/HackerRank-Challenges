@@ -4,7 +4,7 @@ package linkedlist;
 class LinkedList {
     Node head; // head of list
 
-    /* Linked list Node*/
+   /* *//* Linked list Node*//*
     class Node {
         int data;
         Node next;
@@ -13,7 +13,7 @@ class LinkedList {
             data = d;
             next = null;
         }
-    }
+    }*/
 
     /* function to insert a
 new_node in a list. */
